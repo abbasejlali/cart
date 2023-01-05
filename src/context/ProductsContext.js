@@ -7,7 +7,7 @@ const ProductsContext = ({ children }) => {
   const [Product, setProduct] = useState([]);
   useEffect(() => {
     const fetchapi = async () => {
-      setProduct(await Getapi);
+      setProduct(await Getapi());
     };
 
     fetchapi();

@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
-// Api
-import Api from "../../servies/Api";
+import React, { useContext } from "react";
+import { Products } from "../../context/ProductsContext";
+import CardShop from "./CardShop";
+
 const Shop = () => {
-  const [Product, setProduct] = useState([]);
-  useEffect(() => {
-    const fetchapi = async () => {
-      setProduct(await Api);
-    };
-
-    fetchapi();
-  }, []);
-
-  return <div></div>;
+  const products = useContext(Products);
+  return (
+    <div>
+      {console.log(products)}
+      {products.map((item) => (
+        <CardShop key={item.id} productsdata={item} />
+      ))}
+    </div>
+  );
 };
 
 export default Shop;
