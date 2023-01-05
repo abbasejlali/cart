@@ -3,11 +3,14 @@ import Shop from "./components/Shaired/Shop";
 
 // context
 import ProductsContext from "./context/ProductsContext";
+import BettingContext from "./context/BettingContext";
 function App() {
   return (
     <div>
       <ProductsContext>
-        <Shop />
+        <BettingContext>
+          <Shop />
+        </BettingContext>
       </ProductsContext>
     </div>
   );
