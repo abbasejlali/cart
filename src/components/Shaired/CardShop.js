@@ -7,7 +7,7 @@ const CardShop = ({ productsdata }) => {
     <div>
       <div>
         <img src={image} alt="img" />
-        <h2>cutname({title})</h2>
+        <h2>{cutname(title)}</h2>
         <span>price : {price}</span>
       </div>
       <div>
