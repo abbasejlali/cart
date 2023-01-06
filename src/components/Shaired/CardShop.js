@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 // function
-import { cutname } from "../../helper/function";
+import { cutname, isincart } from "../../helper/function";
+// contest
+import { Betting } from "../../context/BettingContext";
 const CardShop = ({ productsdata }) => {
-  const { image, title, price, quantity } = productsdata;
+  const { image, title, price } = productsdata;
+  const { state, dispatch } = useContext(Betting);
   return (
     <div>
       <div>
@@ -11,7 +14,21 @@ const CardShop = ({ productsdata }) => {
         <span>price : {price}</span>
       </div>
       <div>
-        <button>add to cart</button>
+        {isincart(state, productsdata.id) ? (
+          <button
+            onClick={() => dispatch({ type: "ICREASE", payload: productsdata })}
+          >
+            +
+          </button>
+        ) : (
+          <button
+            onClick={() =>
+              dispatch({ type: "ADD_ITEM", payload: productsdata })
+            }
+          >
+            Add to Card
+          </button>
+        )}
       </div>
     </div>
   );

@@ -4,4 +4,9 @@ const cutname = (title) => {
   return name;
 };
 
-export { cutname };
+const isincart = (state, id) => {
+  const product = !!state.selecteditems.find((item) => item.id === id);
+  return product;
+};
+
+export { cutname, isincart };

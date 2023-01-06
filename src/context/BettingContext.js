@@ -40,7 +40,7 @@ const Reducer = (state, action) => {
       const indexD = state.selectedItems.findIndex(
         (item) => item.id === action.payload.id
       );
-      state.selectedItems[indexI].quantity--;
+      state.selectedItems[indexD].quantity--;
       return {
         ...state,
       };
