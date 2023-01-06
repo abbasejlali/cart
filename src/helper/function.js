@@ -5,8 +5,17 @@ const cutname = (title) => {
 };
 
 const isincart = (state, id) => {
-  const product = !!state.selecteditems.find((item) => item.id === id);
+  const product = !!state.selectedItems.find((item) => item.id === id);
   return product;
 };
 
-export { cutname, isincart };
+const quantitycount = (state, id) => {
+  const index = state.selectedItems.findIndex((item) => item.id === id);
+  if (index === -1) {
+    return false;
+  } else {
+    return state.selectedItems[index].quantity;
+  }
+};
+
+export { cutname, isincart, quantitycount };

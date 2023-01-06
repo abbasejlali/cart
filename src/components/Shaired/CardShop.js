@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 // function
-import { cutname, isincart } from "../../helper/function";
+import { cutname, isincart, quantitycount } from "../../helper/function";
 // contest
 import { Betting } from "../../context/BettingContext";
 const CardShop = ({ productsdata }) => {
@@ -27,6 +27,28 @@ const CardShop = ({ productsdata }) => {
             }
           >
             Add to Card
+          </button>
+        )}
+        {quantitycount(state, productsdata.id) > 0 && (
+          <span>{quantitycount(state, productsdata.id)}</span>
+        )}
+        {quantitycount(state, productsdata.id) === 1 && (
+          <button
+            onClick={() =>
+              dispatch({ type: "REMOVE_ITEM", payload: productsdata })
+            }
+          >
+            Remove
+          </button>
+        )}
+
+        {quantitycount(state, productsdata.id) > 1 && (
+          <button
+            onClick={() =>
+              dispatch({ type: "DECREASE", payload: productsdata })
+            }
+          >
+            -
           </button>
         )}
       </div>

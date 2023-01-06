@@ -1,4 +1,5 @@
 import React, { useReducer } from "react";
+
 const Intioalstate = {
   selectedItems: [],
   itemsCounter: 0,
@@ -7,11 +8,12 @@ const Intioalstate = {
 };
 
 const Reducer = (state, action) => {
+  console.log(state.selectedItems);
   switch (action.type) {
     case "ADD_ITEM":
-      if (!state.selectedItems.find((item) => item.id === action.paload.id)) {
+      if (!state.selectedItems.find((item) => item.id === action.payload.id)) {
         state.selectedItems.push({
-          ...action.paload,
+          ...action.payload,
           quantity: 1,
         });
       }
@@ -63,11 +65,13 @@ const Reducer = (state, action) => {
   }
 };
 export const Betting = React.createContext();
-const BettingContext = () => {
+const BettingContext = ({ children }) => {
   const [state, dispatch] = useReducer(Reducer, Intioalstate);
   return (
     <div>
-      <Betting.Provider value={{ state, dispatch }}></Betting.Provider>
+      <Betting.Provider value={{ state, dispatch }}>
+        {children}
+      </Betting.Provider>
     </div>
   );
 };

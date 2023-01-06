@@ -6,7 +6,6 @@ const Shop = () => {
   const products = useContext(Products);
   return (
     <div>
-      {console.log(products)}
       {products.map((item) => (
         <CardShop key={item.id} productsdata={item} />
       ))}
