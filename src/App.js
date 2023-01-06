@@ -1,18 +1,22 @@
 import React from "react";
 import Shop from "./components/Shaired/Shop";
-
+import DetailsProduct from "./components/Shaired/DetailsProduct";
 // context
 import ProductsContext from "./context/ProductsContext";
 import BettingContext from "./context/BettingContext";
 // spa
-// import { Route, Router } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <div>
       <ProductsContext>
         <BettingContext>
-          <Shop />
+          <Switch>
+            <Route path="/products/:id" component={DetailsProduct} />
+            <Route path="/products" component={Shop} />
+            <Redirect from="/" to="/products" />
+          </Switch>
         </BettingContext>
       </ProductsContext>
     </div>

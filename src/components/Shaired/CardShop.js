@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { cutname, isincart, quantitycount } from "../../helper/function";
 // contest
 import { Betting } from "../../context/BettingContext";
+import { Link } from "react-router-dom";
 const CardShop = ({ productsdata }) => {
   const { image, title, price } = productsdata;
   const { state, dispatch } = useContext(Betting);
@@ -12,6 +13,7 @@ const CardShop = ({ productsdata }) => {
         <img src={image} alt="img" />
         <h2>{cutname(title)}</h2>
         <span>price : {price}</span>
+        <Link to={`/products/${productsdata.id}`}>Details</Link>
       </div>
       <div>
         {isincart(state, productsdata.id) ? (
