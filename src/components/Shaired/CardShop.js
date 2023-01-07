@@ -17,9 +17,11 @@ const CardShop = ({ productsdata }) => {
     <div className={styles.cardmain}>
       <div className={styles.iclude}>
         <img src={image} alt="img" />
-        <h2>{cutname(title)}</h2>
-        <span>price : {price}</span>
-        <Link to={`/products/${productsdata.id}`}>Details</Link>
+        <div>
+          <h2>{cutname(title)}</h2>
+          <span>price : {price}</span>
+          <Link to={`/products/${productsdata.id}`}>Details</Link>
+        </div>
       </div>
       <div className={styles.buttons}>
         {isincart(state, productsdata.id) ? (
