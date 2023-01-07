@@ -7,12 +7,14 @@ import { Betting } from "../../context/BettingContext";
 import { Link } from "react-router-dom";
 // img
 import trash from "../../img/trash.png";
+// styles
+import styles from "./CardShop.module.css";
 
 const CardShop = ({ productsdata }) => {
   const { image, title, price } = productsdata;
   const { state, dispatch } = useContext(Betting);
   return (
-    <div>
+    <div className={styles.cardmain}>
       <div>
         <img src={image} alt="img" />
         <h2>{cutname(title)}</h2>
