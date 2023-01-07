@@ -1,6 +1,8 @@
 import React from "react";
 import Shop from "./components/Shaired/Shop";
 import DetailsProduct from "./components/Shaired/DetailsProduct";
+import Navbar from "./components/Shaired/Navbar";
+
 // context
 import ProductsContext from "./context/ProductsContext";
 import BettingContext from "./context/BettingContext";
@@ -12,6 +14,7 @@ function App() {
     <div>
       <ProductsContext>
         <BettingContext>
+          <Navbar />
           <Switch>
             <Route path="/products/:id" component={DetailsProduct} />
             <Route path="/products" component={Shop} />
