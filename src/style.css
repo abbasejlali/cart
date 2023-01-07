@@ -3,7 +3,6 @@
   src: url("./fonts/Mikhak-Medium.ttf") format("truetype");
 }
 * {
-  background-color: rgb(249, 249, 249);
   font-family: MIKHAK;
   font-size: 14px;
   text-decoration: none;
