@@ -14,14 +14,39 @@
   -moz-transition: all ease-in-out 0.5s;
   -ms-transition: all ease-in-out 0.5s;
   -o-transition: all ease-in-out 0.5s;
-  margin: 1rem 1rem;
-  cursor: pointer;
-  padding: 0.5rem;
+  margin: 1.5rem 0.5rem;
 }
 .cardmain:hover {
-  box-shadow: 0 0 50px 15px rgb(0, 0, 0, 0.15);
+  box-shadow: 0 0 50px 2px rgb(0, 0, 0, 0.15);
 }
-.cardmain img {
+.iclude {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-start;
+  align-items: flex-start;
+  background-color: white;
+}
+.iclude img {
   width: 100%;
   height: 150px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.iclude h2,
+span,
+a {
+  padding: 0.25rem 0.75rem;
+  background-color: white;
+}
+.iclude h2 {
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.iclude span {
+  color: forestgreen;
 }

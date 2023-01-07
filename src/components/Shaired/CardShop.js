@@ -15,7 +15,7 @@ const CardShop = ({ productsdata }) => {
   const { state, dispatch } = useContext(Betting);
   return (
     <div className={styles.cardmain}>
-      <div>
+      <div className={styles.iclude}>
         <img src={image} alt="img" />
         <h2>{cutname(title)}</h2>
         <span>price : {price}</span>
