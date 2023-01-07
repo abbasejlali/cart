@@ -20,7 +20,7 @@ const SumItems = (items) => {
 };
 
 const Reducer = (state, action) => {
-  console.log(state.selectedItems);
+  console.log(state.checkout);
   switch (action.type) {
     case "ADD_ITEM":
       if (!state.selectedItems.find((item) => item.id === action.payload.id)) {
@@ -33,6 +33,7 @@ const Reducer = (state, action) => {
         ...state,
         selectedItems: [...state.selectedItems],
         ...SumItems(state.selectedItems),
+        checkout: false,
       };
 
     case "REMOVE_ITEM":
@@ -43,6 +44,7 @@ const Reducer = (state, action) => {
         ...state,
         selectedItems: [...newselecteditem],
         ...SumItems(newselecteditem),
+        checkout: false,
       };
     case "ICREASE":
       const indexI = state.selectedItems.findIndex(
@@ -52,6 +54,7 @@ const Reducer = (state, action) => {
       return {
         ...state,
         ...SumItems(state.selectedItems),
+        checkout: false,
       };
     case "DECREASE":
       const indexD = state.selectedItems.findIndex(
@@ -61,20 +64,21 @@ const Reducer = (state, action) => {
       return {
         ...state,
         ...SumItems(state.selectedItems),
+        checkout: false,
       };
     case "CHECKOUT":
       return {
         selectedItems: [],
         itemsCounter: 0,
         total: 0,
-        checkout: false,
+        checkout: true,
       };
     case "CLEAR":
       return {
         selectedItems: [],
         itemsCounter: 0,
         total: 0,
-        checkout: true,
+        checkout: false,
       };
     default:
       return state;
