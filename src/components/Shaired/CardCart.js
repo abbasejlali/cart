@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+// context
+import { Betting } from "../../context/BettingContext";
 // functions
-import { cutname } from "../../helper/function";
+import { cutname, quantitycount } from "../../helper/function";
+// img
+import trash from "../../img/trash.png";
+
 const CardCart = ({ product }) => {
   const { image, title, quantity, price } = product;
+  const { state, dispatch } = useContext(Betting);
   return (
     <div>
       <div>
@@ -14,6 +20,31 @@ const CardCart = ({ product }) => {
         </div>
         <div>
           <span>{cutname(title)}</span>
+        </div>
+        <div>
+          {quantitycount(state, product.id) === 1 && (
+            <button
+              onClick={() =>
+                dispatch({ type: "REMOVE_ITEM", payload: product })
+              }
+            >
+              <img src={trash} alt="trash" />
+            </button>
+          )}
+          {quantitycount(state, product.id) > 1 && (
+            <button
+              onClick={() => dispatch({ type: "DECREASE", payload: product })}
+            >
+              -
+            </button>
+          )}
+          {
+            <button
+              onClick={() => dispatch({ type: "ICREASE", payload: product })}
+            >
+              +
+            </button>
+          }
         </div>
       </div>
     </div>

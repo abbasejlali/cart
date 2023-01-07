@@ -1,9 +1,13 @@
 import React, { useContext } from "react";
 // function
 import { cutname, isincart, quantitycount } from "../../helper/function";
-// contest
+// context
 import { Betting } from "../../context/BettingContext";
+// spa
 import { Link } from "react-router-dom";
+// img
+import trash from "../../img/trash.png";
+
 const CardShop = ({ productsdata }) => {
   const { image, title, price } = productsdata;
   const { state, dispatch } = useContext(Betting);
@@ -40,7 +44,7 @@ const CardShop = ({ productsdata }) => {
               dispatch({ type: "REMOVE_ITEM", payload: productsdata })
             }
           >
-            Remove
+            <img src={trash} alt="trash" />
           </button>
         )}
 
