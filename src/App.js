@@ -3,7 +3,8 @@ import Shop from "./components/Shaired/Shop";
 import DetailsProduct from "./components/Shaired/DetailsProduct";
 import Navbar from "./components/Shaired/Navbar";
 import Cart from "./components/Shaired/Cart";
-
+// styles
+import styles from "./style.css";
 // context
 import ProductsContext from "./context/ProductsContext";
 import BettingContext from "./context/BettingContext";
