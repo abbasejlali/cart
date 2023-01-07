@@ -21,15 +21,17 @@ const CardShop = ({ productsdata }) => {
         <span>price : {price}</span>
         <Link to={`/products/${productsdata.id}`}>Details</Link>
       </div>
-      <div>
+      <div className={styles.buttons}>
         {isincart(state, productsdata.id) ? (
           <button
+            className={styles.buttonplus}
             onClick={() => dispatch({ type: "ICREASE", payload: productsdata })}
           >
             +
           </button>
         ) : (
           <button
+            className={styles.buttonadd}
             onClick={() =>
               dispatch({ type: "ADD_ITEM", payload: productsdata })
             }
@@ -38,10 +40,13 @@ const CardShop = ({ productsdata }) => {
           </button>
         )}
         {quantitycount(state, productsdata.id) > 0 && (
-          <span>{quantitycount(state, productsdata.id)}</span>
+          <span className={styles.span}>
+            {quantitycount(state, productsdata.id)}
+          </span>
         )}
         {quantitycount(state, productsdata.id) === 1 && (
           <button
+            className={styles.btnimg}
             onClick={() =>
               dispatch({ type: "REMOVE_ITEM", payload: productsdata })
             }
@@ -52,6 +57,7 @@ const CardShop = ({ productsdata }) => {
 
         {quantitycount(state, productsdata.id) > 1 && (
           <button
+            className={styles.buttondec}
             onClick={() =>
               dispatch({ type: "DECREASE", payload: productsdata })
             }

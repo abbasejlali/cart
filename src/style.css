@@ -8,4 +8,10 @@
   text-decoration: none;
   margin: 0;
   padding: 0;
+  color: rgb(57, 57, 57);
+}
+html {
+  background-color: rgba(250, 249, 249, 0.967);
+  margin: 0;
+  padding: 0;
 }

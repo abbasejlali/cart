@@ -26,7 +26,6 @@
   flex-direction: column;
   justify-self: flex-start;
   align-items: flex-start;
-  background-color: white;
 }
 .iclude img {
   width: 100%;
@@ -35,11 +34,8 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-.iclude h2,
-span,
-a {
+.iclude {
   padding: 0.25rem 0.75rem;
-  background-color: white;
 }
 .iclude h2 {
   font-size: 20px;
@@ -49,4 +45,67 @@ a {
 
 .iclude span {
   color: forestgreen;
+}
+
+.iclude a {
+  background-color: rgb(237, 225, 0);
+  padding: 0 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  text-align: center;
+  margin-top: 10px;
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 20px;
+}
+.buttons button {
+  border: 0;
+  outline: 0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+}
+.buttons .buttonplus {
+  background-color: rgb(0, 188, 94);
+  color: white;
+}
+.buttons .span {
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 0 10px 0 10px;
+  border-bottom: 2px solid rgb(59, 59, 59);
+  line-height: 25px;
+  width: 14px;
+  text-align: center;
+}
+.buttons .buttonadd {
+  background-color: rgb(0, 188, 94);
+  color: white;
+  width: 90%;
+}
+.buttons .btnimg {
+  padding: 4px 4px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+}
+.buttons .btnimg img {
+  width: 23px;
+}
+.buttons .buttondec {
+  background-color: rgb(247, 24, 69);
+  color: white;
 }
