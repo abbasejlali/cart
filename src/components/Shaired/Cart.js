@@ -23,7 +23,7 @@ const Cart = () => {
           <div>
             <span>ItemsCounter : {state.itemsCounter}</span>
             <span>TotalPrice : {state.total}</span>
-            <div>
+            <div className={styles.buttons}>
               <button onClick={() => dispatch({ type: "CHECKOUT" })}>
                 Checkout
               </button>
