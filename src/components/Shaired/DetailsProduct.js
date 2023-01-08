@@ -1,8 +1,13 @@
 import React, { useContext } from "react";
+
 // spa
 import { Link } from "react-router-dom";
+
 // Context
 import { Products } from "../../context/ProductsContext";
+
+// styles
+import styles from "./DetailsProduct.module.css";
 
 const DetailsProduct = (props) => {
   const id = props.match.params.id;
@@ -11,7 +16,6 @@ const DetailsProduct = (props) => {
   const { image, description, title, category, price } = product;
   return (
     <div>
-      <img src={image} alt="product" />
       <div>
         <h3>{title}</h3>
         <p>{description}</p>
@@ -24,6 +28,7 @@ const DetailsProduct = (props) => {
           <Link to="/products">Back to Shop</Link>
         </div>
       </div>
+      <img src={image} alt="product" />
     </div>
   );
 };
