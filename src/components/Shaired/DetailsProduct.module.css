@@ -1,0 +1,82 @@
+.main {
+  max-width: 90%;
+  width: 100%;
+  background-color: white;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  border: 1px solid rgba(225, 225, 225, 0.6);
+  flex-wrap: wrap;
+}
+.text {
+  padding: 3rem 0 0 2rem;
+  max-width: 40%;
+  width: 100%;
+}
+.text h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.text p {
+  margin: 1.5rem 0;
+  color: rgba(41, 41, 41, 0.6);
+  font-size: 16px;
+  text-align: justify;
+}
+.text p span {
+  font-size: 16px;
+}
+
+.pricediv {
+  display: flex;
+  flex-direction: column;
+}
+.pricediv a {
+  font-size: 16px;
+  transition: all ease-in-out 0.2s;
+  -webkit-transition: all ease-in-out 0.2s;
+  -moz-transition: all ease-in-out 0.2s;
+  -ms-transition: all ease-in-out 0.2s;
+  -o-transition: all ease-in-out 0.2s;
+}
+
+.pricediv span {
+  font-size: 16px;
+  color: rgb(0, 188, 94);
+}
+.pricediv a:hover {
+  color: rgb(172, 172, 172);
+}
+.main img {
+  object-fit: cover;
+  min-height: 200px;
+  height: 100%;
+}
+
+@media only screen and (min-width: 0) {
+  .main img {
+    max-width: 100%;
+    width: 100%;
+  }
+  .text {
+    max-width: 100%;
+    width: 100%;
+    padding: 3rem 2rem 0 2rem;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .main img {
+    max-width: 50%;
+  }
+  .text {
+    max-width: 40%;
+    width: 100%;
+    padding: 3rem 0 0 2rem;
+  }
+}

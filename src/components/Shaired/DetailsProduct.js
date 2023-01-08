@@ -15,16 +15,16 @@ const DetailsProduct = (props) => {
   const product = data[id - 1];
   const { image, description, title, category, price } = product;
   return (
-    <div>
-      <div>
-        <h3>{title}</h3>
+    <div className={styles.main}>
+      <div className={styles.text}>
+        <h2>{title}</h2>
         <p>{description}</p>
         <p>
           <span>Category :</span>
           <span> {category} </span>
         </p>
-        <div>
-          <span>{price} $</span>
+        <div className={styles.pricediv}>
+          <span>price : {price} $</span>
           <Link to="/products">Back to Shop</Link>
         </div>
       </div>
