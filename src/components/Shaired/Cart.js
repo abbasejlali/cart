@@ -1,18 +1,24 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import CardCart from "./CardCart";
+
 // Context
 import { Betting } from "../../context/BettingContext";
-import CardCart from "./CardCart";
+
+// styles
+import styles from "./Cart.module.css";
 
 const Cart = () => {
   const { state, dispatch } = useContext(Betting);
 
   return (
-    <div>
-      <div>
+    <div className={styles.main}>
+      <div className={styles.cards}>
         {state.selectedItems.map((items) => (
           <CardCart key={items.id} product={items} />
         ))}
+      </div>
+      <div className={styles.checkoutdiv}>
         {state.itemsCounter > 0 && (
           <div>
             <span>ItemsCounter : {state.itemsCounter}</span>

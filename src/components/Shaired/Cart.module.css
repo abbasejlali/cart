@@ -1,0 +1,21 @@
+.main {
+  max-width: 90%;
+  width: 100%;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 100%;
+  height: 100%;
+}
+.cards {
+  max-width: 60%;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
