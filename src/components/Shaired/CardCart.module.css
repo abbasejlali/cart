@@ -19,6 +19,7 @@
   -moz-transition: all ease-in-out 0.3s;
   -ms-transition: all ease-in-out 0.3s;
   -o-transition: all ease-in-out 0.3s;
+  flex-wrap: wrap;
 }
 .main img {
   width: 100px;
@@ -79,4 +80,7 @@
 .buttons .buttondec {
   background-color: rgb(247, 24, 69);
   color: white;
+}
+
+@media only screen and (min-width: 0) {
 }

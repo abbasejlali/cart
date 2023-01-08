@@ -7,10 +7,9 @@
   align-items: flex-start;
   min-height: 100%;
   height: 100%;
+  flex-wrap: wrap;
 }
 .cards {
-  max-width: 60%;
-  width: 100%;
   min-height: 100%;
   height: 100%;
   display: flex;
@@ -19,8 +18,6 @@
   align-items: flex-start;
 }
 .checkoutdiv {
-  max-width: 35%;
-  width: 100%;
   min-height: 100%;
   height: 100%;
   padding: 1rem;
@@ -71,4 +68,25 @@
 .checkoutdiv .buttons button:nth-child(2) {
   background-color: rgb(247, 24, 69);
   color: white;
+}
+
+@media only screen and (min-width: 0) {
+  .cards {
+    max-width: 100%;
+    width: 100%;
+  }
+  .checkoutdiv {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .cards {
+    max-width: 60%;
+    width: 100%;
+  }
+  .checkoutdiv {
+    max-width: 35%;
+    width: 100%;
+  }
 }
