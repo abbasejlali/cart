@@ -6,21 +6,23 @@ import { Link } from "react-router-dom";
 import { Products } from "../../context/ProductsContext";
 
 const DetailsProduct = (props) => {
-  const id1 = props.match.params.id;
+  const id = props.match.params.id;
   const data = useContext(Products);
-  const productmain = data[id1 - 1];
-  const { image, description, title, category, price } = productmain;
-
+  const product = data[id - 1];
+  const { image, description, title, category, price } = product;
   return (
     <div>
+      <img src={image} alt="product" />
       <div>
-        <img src={image} alt="img" />
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <p>
+          <span>Category :</span>
+          <span> {category} </span>
+        </p>
         <div>
-          <span>{category}</span>
-          <h1>{title}</h1>
-          <p>{description}</p>
-          <span>{price}</span>
-          <Link to={Shop}>Back to Products</Link>
+          <span>{price} $</span>
+          <Link to="/product">Back to Shop</Link>
         </div>
       </div>
     </div>
