@@ -16,14 +16,16 @@ const Navbar = () => {
   const { state } = useContext(Betting);
   return (
     <div className={styles.main}>
-      <div className={styles.productsdiv}>
-        <Link to="/products">Products</Link>
-      </div>
-      <div className={styles.logocartdiv}>
-        <Link to="/cart">
-          <img src={shoppingimge} alt="cart" />
-        </Link>
-        <span>{state.itemsCounter}</span>
+      <div>
+        <div className={styles.productsdiv}>
+          <Link to="/products">Products</Link>
+        </div>
+        <div className={styles.logocartdiv}>
+          <Link to="/cart">
+            <img src={shoppingimge} alt="cart" />
+          </Link>
+          <span>{state.itemsCounter}</span>
+        </div>
       </div>
     </div>
   );
