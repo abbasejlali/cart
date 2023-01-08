@@ -103,7 +103,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
+  background-color: rgb(247, 24, 69);
 }
 .buttons .btnimg img {
   width: 23px;
